@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Edit Phone</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="name">nama hp</label>
+        <input type="text" class="form-control" id="nama" name="nama" value="{{ hp[1] }}" required>
+    </div>
+    <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="text" class="form-control" id="brand" name="brand" value="{{ hp[2] }}" required>
+    </div>
+    <div class="form-group">
+        <label for="harga">harga</label>
+        <input type="number" step="0.01" class="form-control" id="harga" name="harga" value="{{ hp[3] }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update hp</button>
+    <a href="{{ url_for('manage_phones') }}" class="btn btn-secondary">batal</a>
+</form>
+{% endblock %}
